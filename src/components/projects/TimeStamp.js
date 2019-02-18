@@ -1,9 +1,9 @@
 import React from 'react'
 const TimeStamp = ({createdAt, updatedAt}) => {
   return (
-    <div className="columns scroll">
-      <div className="column">Created at: {createdAt.split('T')[0]} </div>
-      <div className="column">Updated at: {updatedAt.split('T')[0]}</div>
+    <div className="columns scroll timeStamp">
+      <div className="column createdAt">Created at: {createdAt.split('T')[0]} </div>
+      <div className="column updatedAt">Updated at: {updatedAt.split('T')[0]}</div>
     </div>
   )
 }

@@ -113,8 +113,9 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
 
       return (users)
     })
-      // })
-    // .then( (users)=> Package.create([{
+    // })
+    // .then( (users)=> Package.create([
+    //   {
     //   name: 'webpack',
     //   description: 'Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.',
     //   icon: 'https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-small.png',
@@ -287,6 +288,26 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
     //   }]
     // }])
     // )
+    .then( (users)=> Package.create([
+      {
+        name: 'zqxzqxqzxqzxqzx',
+        description: 'Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.',
+        icon: 'https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-small.png',
+        version: '3.1.14',
+        keywords: ['webpack'],
+        downloadsCount: 22629569,
+        comments: [{
+          text: 'This is great!',
+          user: users.james
+        },{
+          text: 'Best package ever!',
+          user: users.siddant
+        },{
+          text: 'Most beautiful package ever!',
+          user: users.begona
+        }]
+      }])
+    )
 
 
     .then(() => console.log('Database successfully seeded'))

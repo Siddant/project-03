@@ -7,6 +7,7 @@ import PackageIndex from '../packages/PackageIndex'
 import TimeStamp from './TimeStamp'
 import UserInfo from './UserInfo'
 import ProjectVisibility from './ProjectVisibility'
+import PackageBox from './PackageBox'
 import InstalledPackageIndex from '../packages/InstalledPackageIndex'
 import PackageShow from '../packages/PackageShow'
 
@@ -29,6 +30,7 @@ class ProjectShow extends React.Component {
     this.delayedCallback = debounce(this.putProject, 1000)
     this.handleAddClick = this.handleAddClick.bind(this)
     this.handleTabClick = this.handleTabClick.bind(this)
+    this.handleTagClick = this.handleTagClick.bind(this)
     this.handleViewClick = this.handleViewClick.bind(this)
     this.handlePackageDelete = this.handlePackageDelete.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -167,26 +169,11 @@ class ProjectShow extends React.Component {
                 value={description}
                 readOnly={!loggedIn}
               />
-              <section className="box">
-                <h2 className='title is-5'>Installed packages</h2>
-                {packages.length === 0 && <div className="none">no packages yet</div>}
-                <div className="tags">
-                  {packages.map((_package,i) =>
-                    <div
-                      className="tag is-info fade-in"
-                      key={i}
-                      id={_package._id}
-                      onClick={()=> this.handleTagClick(_package)}
-                    >
-                      {_package.name}
-                      {loggedIn && <button
-                        className="delete is-small"
-                        onClick={() => this.handlePackageDelete(_package)}>
-                      </button>}
-                    </div>
-                  )}
-                </div>
-              </section>
+              <PackageBox
+                loggedIn={loggedIn}
+                handleTagClick={this.handleTagClick}
+                handlePackageDelete={this.handlePackageDelete}
+                packages={packages} />
               <ProjectVisibility visible={visible} handleChange={this.handleChange} loggedIn={loggedIn}/>
               <hr />
               {!loggedIn &&
@@ -209,7 +196,11 @@ class ProjectShow extends React.Component {
                         </div>
                       </a>
                     </li>
-                    <li className={this.state.tab==='comments'? 'is-active': ''} ref={el => this.commentTab = el} onClick={(e)=>this.handleTabClick(e,'comments')} >
+                    <li
+                      className={this.state.tab==='comments'? 'is-active': ''}
+                      ref={el => this.commentTab = el}
+                      onClick={(e)=>this.handleTabClick(e,'comments')}
+                    >
                       <a className='level'>
                         <div className='level-item'>Comments</div>
                         <div className='level-right'>
@@ -220,9 +211,16 @@ class ProjectShow extends React.Component {
                   </ul>
                 </div>
                 <div className="card-content">
-                  {(this.state.tab==='comments')&&<div className="">
-                    <CommentInput postCommentUrl={`/api/projects/${_id}/comments`} updateThread={this.getProject}/>
-                    {comments.map((comment, i)=><CommentCard key={i} comment={comment} />)}
+                  {(this.state.tab==='comments')&&
+                  <div className="">
+                    {Auth.isAuthenticated()&&
+                      <CommentInput
+                        postCommentUrl={`/api/projects/${_id}/comments`}
+                        updateThread={this.getProject}
+                      />}
+                    {comments.map((comment, i)=>
+                      <CommentCard key={i} comment={comment} />
+                    )}
                   </div>}
                   {(this.state.tab==='installed')&&
                   <InstalledPackageIndex
@@ -232,8 +230,6 @@ class ProjectShow extends React.Component {
                     userId = {this.state.project.user._id}/>}
                   {(this.state.tab==='search')&&
                   <PackageIndex
-
-
                     handleAddClick={this.handleAddClick}
                     packages={this.state.project.packages}
                     handleViewClick={this.handleViewClick}

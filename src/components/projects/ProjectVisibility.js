@@ -4,7 +4,7 @@ const ProjectVisibility = ({visible, handleChange, loggedIn}) => {
   return (
     <section className="section visible">
       <div className="control">
-        <strong>Visible?</strong>
+        <strong>View Public</strong>
         <label className="switch">
           <input
             type="checkbox"

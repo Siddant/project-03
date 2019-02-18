@@ -3,20 +3,18 @@ import { Link } from 'react-router-dom'
 
 const ProjectCard = ({data}) => {
 
-  // const {_id, name, description, updatedAt, user} = project
   const {
     bio,
     image,
     project,
     username,
     _id
-} = data
+  } = data
 
   const comments = project.reduce((acc, el)=>acc += el.comments.length,0)
   return(
     <div className="card projectCard">
       <Link to={`/users/${_id}`}>
-
         <div className="card-header">
           <h4 className="card-header-title">
             <div className="user-card-image">
@@ -27,16 +25,11 @@ const ProjectCard = ({data}) => {
         </div>
       </Link>
       <div className="card-content">
-        {/*  <figure className="image">
-            <img className="image profile" src={image || 'http://interreligio.unistra.fr/wp-content/uploads/2017/07/profil-vide.png'} alt={'hello'} />
-            <blockquote className="description">{bio} && bio.length > 70 ? bio.substr(0, 70) + '...' : bio}</blockquote>
-          </figure>*/}
         <div className="columns">
           <div className="column content">
             <blockquote className="description">{bio}</blockquote>
           </div>
           <div className="column content">
-
             <div className="field is-grouped is-grouped-multiline">
               <div className="control is-fullwidth">
                 <div className="tags has-addons">

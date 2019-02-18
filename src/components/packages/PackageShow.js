@@ -5,6 +5,8 @@ import axios from 'axios'
 import CommentCard from '../common/CommentCard'
 import CommentInput from '../common/CommentInput'
 
+import Auth from '../../lib/Auth'
+
 
 class PackageShow extends React.Component{
 
@@ -62,7 +64,7 @@ class PackageShow extends React.Component{
     } = this.state.package.npms.collected.github
     const {
       dependentsCount,
-      starsCount:npmStarsCount
+      starsCount: npmStarsCount
     } = this.state.package.npms.collected.npm
     const {
       maintenance: {
@@ -79,7 +81,7 @@ class PackageShow extends React.Component{
         health,
         tests
       }
-} = this.state.package.npms.evaluation
+    } = this.state.package.npms.evaluation
     const {comments, icon} = this.state.package
     function arrFromObj(obj){
       const arr = []
@@ -95,18 +97,14 @@ class PackageShow extends React.Component{
               ref={el => this.aboutTab = el}
               onClick={(e)=>this.handleClick(e,'about')}
             >
-              <a>
-                {`About: ${name}`}
-              </a>
+              <a> {`About: ${name}`}</a>
             </li>
             <li
               className={this.state.tab==='stats'? 'is-active': ''}
               ref={el => this.statsTab = el}
               onClick={(e)=>this.handleClick(e,'stats')}
             >
-              <a>
-                Stats
-              </a>
+              <a>Stats</a>
             </li>
             <li
               className={this.state.tab==='comments'? 'is-active': ''}
@@ -122,10 +120,8 @@ class PackageShow extends React.Component{
             </li>
           </ul>
         </div>
-
         {(this.state.tab==='about')&&<div className="card package-index-card">
           <div className="card-content">
-
             {icon&&<div className="package-show-image">
               <figure className="image" style={{ backgroundImage: `url(${icon})` }} />
             </div>}
@@ -221,9 +217,8 @@ class PackageShow extends React.Component{
           </div>
         </div>}
         {(this.state.tab==='comments')&&<div className="card-content">
-          <CommentInput postCommentUrl={`/api/packages/${name}`} updateThread={this.getPackageData}/>
+          {Auth.isAuthenticated()&&<CommentInput postCommentUrl={`/api/packages/${name}`} updateThread={this.getPackageData}/>}
           {comments.map((comment, i)=><CommentCard key={i} comment={comment} />)}
-          {/* <CommentInput postCommentUrl={`/api/packages/${this.props.match.params.id}`}/>*/}
         </div>}
         <footer className="card-footer-item">
           {arrFromObj(links).map( (link,i) => {
@@ -234,32 +229,7 @@ class PackageShow extends React.Component{
             </p>
           })}
         </footer>
-
       </div>
-      /*<section className='card'>
-        <h1 className='title is-2'>{name}</h1>
-        <div className='content'>
-          <blockquote className="">{description}</blockquote >
-        </div>
-        <p>{`author:${author.name}`}</p>
-        <p>{`license:${license}`}</p>
-        <p>{`publisher:${publisher.username}, ${publisher.email}`}</p>
-        <h3>links:</h3>
-        <ul>
-          {arrFromObj(links).map( (link,i) => {
-            return <li key={i}><a  href={link[1]}>{link[0]}</a></li>
-          })}
-        </ul>
-        <h3>Comments</h3>
-        <ul>
-          {comments.map( (comment, i) =>
-            <li key={i}>
-              <p>{comment.text}</p>
-              <p>{`Posted by ${comment.user.username}`}</p>
-            </li>
-          )}
-        </ul>
-      </section>*/
     )
   }
 }

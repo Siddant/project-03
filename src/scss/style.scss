@@ -158,12 +158,7 @@ input.hidden-input:focus{
   }
 //
 }
-// .hidden-input[readOnly] {
-//   border: none;
-//   background-color: white;
-//   box-shadow: none;
-//   color: black;
-// }
+
 
 .pepino-logo{
   height:30px;
@@ -257,6 +252,17 @@ hr.project {
     }
     .none {
       text-align: center;
+    }
+  }
+
+  .timeStamp {
+    height: 100px;
+    .column.createdAt {
+      height: 100px;
+    }
+
+    .column.updatedAt {
+      height: 100px;
     }
   }
 
@@ -387,6 +393,11 @@ a {
   padding: 1em ;
 }
 
+.content.comment-card{
+  min-height: 40px;
+}
+
+
 .comment-image{
   overflow: hidden;
   height: 50px;
@@ -394,7 +405,7 @@ a {
   border-radius: 25px;
     .image {
       background-position: center;
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
         height: 100%;
         width: 100%;
@@ -470,6 +481,9 @@ a {
 
 /* Hide default HTML checkbox */
 .switch input {
+  &:focus, &:hover{
+    outline: none;
+  }
   opacity: 0;
   width: 0;
   height: 0;
