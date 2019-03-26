@@ -80,6 +80,7 @@ class Home extends React.Component{
                   errors={this.state.error}
                   changeState={this.changeState}
                 />}
+
                 {!this.state.register && <LoginForm
                   handleSubmit={(e)=>this.props.handleLogin(e, this.state.data)}
                   handleChange={this.handleChange}
@@ -97,19 +98,11 @@ class Home extends React.Component{
       return (
         <section className="section">
           <div className="container">
-            <div className="columns is-centered">
-              <div className="column is-half authorisation">
-                <div className="title is-1">Pepino</div>
-                <h2  className="title is-2">Built for developers</h2>
-                <div  className="homeText">If you want to manage your projects, see what packages are out there and find out what other users are doing.</div>
-                <div  className="homeText">
-                Connect with other developers, Explore all possibilities.
-                </div>
-                <div  className="homeText">
-                  Join Today.
-                </div>
-              </div>
+            <div className="laser-blade">
+              <div className="pepino-logo"></div>
+              <div className="title is-1">LASER-BLADE</div>
             </div>
+            <div className="blurb">If you want to manage your projects, see what packages are out there and find out what other users are doing blah blah blah </div>
           </div>
         </section>
       )

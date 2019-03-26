@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Favicon from 'react-favicon'
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Redirect } from 'react-router'
 
@@ -112,9 +110,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <div>
-    <Favicon url="assets/my-logo.png"/>
-    <App />
-  </div>,
+  <App />,
   document.getElementById('root')
 )
