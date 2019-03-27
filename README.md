@@ -8,13 +8,6 @@ A group project of 3 members [Begona Fernandez](https://github.com/aguairon), [S
 
  A live version of this site can be found on Heroku ----> https://project-3-group.herokuapp.com/
 
-<!-- Pepino is a tool to help Node developers discover new node packages.
-
-With integrated search of the NPM library using keywords, users are able to see the description and usage statistics of node packages. Users can create representations of their node projects, add their current node packages to it and comment on the packages or other projects.
-
-The project had three models and we were each able to experience the backend, testing and front end for our own model. I was responsible for creating the Packages model and schema for the database, and their RESTful routes. I also created the packages Index and Show pages on the website, and am responsible for the colour choice and overall styling -->
-
-
 ### Timeframe
 7 days
 
@@ -65,19 +58,28 @@ With the back-end side of the application working properly, we shifted our atten
 
 In this project I contribute towards the development features on the users side. The features I implemented was the authorisation system which included log-in, register, error handling on the user side, users indexRoute, users showRoute, users updateRoute and tested the users routes.
 
+
+<!-- In order to carry out the authentication process, we used BCrypt to hash passwords in the backend and store it in the database so that BCrypt could compare it against the password given when logging in. We also used JSON Web Token to embed JSON into an encrypted token. This was incorporated in our login and register controller and is sent to the client when the users successfully authenticate. -->
+
 ## Challenges
 This was my first time using Git in a group environment, therefore I had a lot of issues with merge conflict. I keep on forgetting few steps, such as forgetting to create different sub branches during implementation phase of features therefore in most case I was developing on the main development branch.
 
-Also working with new technology brought new challenges and new concept. The embedded and reference concept pf MongoDB was really challenging to understand properly.
+Also working with new technology brought new challenges and new concept. The embedded and reference concept of MongoDB was really challenging to understand properly.
 
 ## Wins
+One of the feature I created for this project which allow users to search for other users was a bit tricky to implement. As the feature required to show all the users with similar username, I was able to overcome this issue by using a Regular Expression on the searchRoute. I also implemented debouncing approach to this feature to create an instance search.
 
+```
+function searchRoute(req, res, next ) {
+  User
+    .find({'username': new RegExp(req.params.search, 'i')})
+    .populate('project')
+    .then(users => res.json(users))
+    .catch(next)
+}
+```
 
-
-<!-- Use of the Authentication helper method that allow the application to render pages differently according to if the user is logged-in or not i.e. in the show page, we only show current weather, tweets and comments if the user is logged in. This allow to use the same route api/pages and api/pages/:id for any scenario. -->
-
-
-
+I really pleased with implementing the Authentication system to the application, as it allowed more featured to be implemented to this application. Overall from this project I have gained a lot of experience in both front-end and back-end development.
 
 ## Future Features
 * Email validation and password reset.
