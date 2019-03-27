@@ -22,7 +22,6 @@ The project had three models and we were each able to experience the backend, te
 * React
 * Node.js
 * JavaScript (ES6) / HTML5 / SCSS
-* Git / GitHub
 * MongoDB & Mongoose
 * BCrypt & Session Auth
 * Bulma CSS Framework & SCSS
@@ -60,29 +59,29 @@ Each of the application functionalities was prioritised using the MoSCoW method.
 * resolve git conflict as a group
 * notify the team before starting the process to push the features.
 
-### Development process
-The development process started by installing all the packages we required as a group and paired coded all the boilerplate code. We used Express to create the back-end side of the application, to store the data we used MongoDB. We also used Mongoose to connect to the MongoDB in a ORM environment. Once the back-end side was up and running, we created the seed file to add some dummy data to the database. The purpose of the seed file was to see if the back-end would render data as expected and would be easier to test using Insomnia.
+The development process started by installing all the packages we required as a group and paired coded all the boilerplate code. We used Express to create the back-end side of the application, to store the data we used MongoDB. We also used Mongoose to interact with the MongoDB. Once the back-end side was up and running, we created the seed file to add some dummy data to the database. The purpose of the seed file was to see if the back-end would render data as expected and would be easier to test using Insomnia.
 
-With the back-end side of the application working properly, we shifted our attention to the fron-end side. We used axios to make HTTP request to the back-end side of the application to retrieve data, these data were rendered using React. We also used Bulma which was customised using Scss to make sure the styling across the application was consistent.
+With the back-end side of the application working properly, we shifted our attention to the fron-end side. We used axios to make HTTP request to the back-end side of the application to retrieve data, these data were rendered using React. We also used Bulma which was customised using SCSS to make sure the styling across the application was consistent.
 
-#### Contribution
-In this project I contribute by focusing on the users side features. The features I implemented were log-in, register, error handling on the user side, authorisation system, users indexRoute, users showRoute, users updateRout and tested the users routes.
-
-
-
-<!-- We used Filestacka API to allow users to uploade images,
-
-
-
-RESTful routes -->
-
-
-
+In this project I contribute towards the development features on the users side. The features I implemented was the authorisation system which included log-in, register, error handling on the user side, users indexRoute, users showRoute, users updateRoute and tested the users routes.
 
 ## Challenges
-uisng git in team enviorment
-the concept of mongodb with virtual, embedded and reference
+This was my first time using Git in a group environment, therefore I had a lot of issues with merge conflict. I keep on forgetting few steps, such as forgetting to create different sub branches during implementation phase of features therefore in most case I was developing on the main development branch.
+
+Also working with new technology brought new challenges and new concept. The embedded and reference concept pf MongoDB was really challenging to understand properly.
 
 ## Wins
 
+
+
+<!-- Use of the Authentication helper method that allow the application to render pages differently according to if the user is logged-in or not i.e. in the show page, we only show current weather, tweets and comments if the user is logged in. This allow to use the same route api/pages and api/pages/:id for any scenario. -->
+
+
+
+
 ## Future Features
+* Email validation and password reset.
+* Users to follower other users.
+* Users to like project created by other Users
+* Rank the project depending on the number of like they received.
+* Users to message each other.
