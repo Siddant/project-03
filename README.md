@@ -4,7 +4,7 @@ A group project of 3 members [Begona Fernandez](https://github.com/aguairon), [S
 
 ## Goal
 
- To build a MERN stack application in a group and also have an automated tests for at least one RESTful resource on the back-end.
+ To build a MERN stack application in a group and also have an automated tests for at least one RESTful resource on the back-end. The application uses the MVC methodology.
 
  A live version of this site can be found on Heroku ----> https://project-3-group.herokuapp.com/
 
@@ -19,7 +19,7 @@ The project had three models and we were each able to experience the backend, te
 7 days
 
 ## Technologies used
-* React.js
+* React
 * Node.js
 * JavaScript (ES6) / HTML5 / SCSS
 * Git / GitHub
@@ -52,6 +52,13 @@ Pepino is a tool to help Node developers discover new node packages. Pepino also
 ## Instruction
 
 ## Process
+We started the project by creating wireframes for our application and decided the core functionalities the application should have, as a group. We also discussed the RESTful routes, the structure of the database and models the application will required for the MVC methodology. The application contains 3 models user, project and package. To separate the work load efficiently we decided each member of the team would pick a model to work. Individually we would create the front-end side, back-end side and test the chosen model individually, we choose this approach to avoid any major conflict with git in the future. I feel it was an efficient approach as it gave each member of the team experience developing on the front-end and the back-end side of the application.
+
+### Development process
+The development process started by installing all the packages we required as a group and paired coded all the boilerplate code. Each of the application functionalities was prioritised using the MoSCoW method. Trello was used to manage the project and assign task to an individual. We also had daily stand-up three time a day in the morning, before lunch and before we went home to keep track of the application progress. Each features were implemented by creating a separate git branches on our local computer before merging into the main development branch. We also establish few sets up rule for git such as don't push broken code to the main git branch, resolve git conflict as a group and notify the team before starting the process to push the features. 
+
+### Contribution
+
 
 
 ## Challenges
