@@ -30,7 +30,6 @@ The project had three models and we were each able to experience the backend, te
 * Bluebird
 * request-promise/axio
 * Webpack
-* FileStack React
 * JWT (JSON Web Token)
 * Git / GitHub / Heroku
 
@@ -48,3 +47,16 @@ The project had three models and we were each able to experience the backend, te
 6. To see test result use ```yarn run test``` in Terminal
 
 ## Overview
+Pepino is a tool to help Node developers discover new node packages. Pepino also helps developers to keep track of their projects, helps them to manage packages they used to build the project. Pepino allows users to discover new users and discover project other users has created.
+
+## Instruction
+
+## Process
+
+
+## Challenges
+
+
+## Wins
+
+## Future Features
