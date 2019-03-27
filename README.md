@@ -63,14 +63,20 @@ Each of the application functionalities was prioritised using the MoSCoW method.
 ### Development process
 The development process started by installing all the packages we required as a group and paired coded all the boilerplate code. We used Express to create the back-end side of the application, to store the data we used MongoDB. We also used Mongoose to connect to the MongoDB in a ORM environment. Once the back-end side was up and running, we created the seed file to add some dummy data to the database. The purpose of the seed file was to see if the back-end would render data as expected and would be easier to test using Insomnia.
 
+With the back-end side of the application working properly, we shifted our attention to the fron-end side. We used axios to make HTTP request to the back-end side of the application to retrieve data, these data were rendered using React. We also used Bulma which was customised using Scss to make sure the styling across the application was consistent.
+
+#### Contribution
+In this project I contribute by focusing on the users side features. The features I implemented were log-in, register, error handling on the user side, authorisation system, users indexRoute, users showRoute, users updateRout and tested the users routes.
 
 
 
-We started developing features individually, in this project I contribute by focusing on the users side features. The features I implemented were log-in, register, error handling on the user side, authorisation system, users indexRoute, users showRoute, users updateRout and doing testing on the users routes.
+<!-- We used Filestacka API to allow users to uploade images,
 
-RESTful routes
 
- contrbuted
+
+RESTful routes -->
+
+
 
 
 ## Challenges
