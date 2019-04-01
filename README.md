@@ -43,7 +43,35 @@ A group project of 3 members [Begona Fernandez](https://github.com/aguairon), [S
 Pepino is a tool to help Node developers discover new node packages. Pepino also helps developers to keep track of their projects, helps them to manage packages they used to build the project. Pepino allows users to discover new users and discover project other users has created.
 
 ## Instruction
+This is the registration form, which new user can use to create a new account to access the website.
+![screenshot](https://user-images.githubusercontent.com/5802969/55153283-f5cfa780-5149-11e9-99e2-f982eab487da.png)
 
+If the user has got an account then they can use the log in form to log-in to the website.
+![screenshot](https://user-images.githubusercontent.com/5802969/55153284-f5cfa780-5149-11e9-8a09-21130dca2630.png)
+
+Once they are logged-in, they will be directed to their profile page. The user profile will contains all the project the have created, they have the ability to edit their bio and also add new project.
+![screenshot](https://user-images.githubusercontent.com/5802969/55153285-f5cfa780-5149-11e9-8305-be14942842c1.png)
+
+User can add new project by clicking on the ```add project``` button, which will show a form where the users are required to enter the project name and the project description.
+![screenshot](https://user-images.githubusercontent.com/5802969/55153286-f6683e00-5149-11e9-9422-867b7dc59be0.png)
+
+After the user has created the project, they will be redirected to the project edit page. In this page the user can search for node packages and add them to the project. Added package are shown on the installed package section. The user also has the ability to keep the project as a private or public.
+![screenshot](https://user-images.githubusercontent.com/5802969/55153288-f6683e00-5149-11e9-8ece-cb001063779a.png)
+
+By clicking on the ```view detail``` button the user get to see more detail about the specific package. The user can also see comment about the package left by other users on the platform.
+![screenshot](https://user-images.githubusercontent.com/5802969/55153289-f6683e00-5149-11e9-86b7-3cc2c00b3519.png)
+
+The user also has the ability to search for projects other users has created.
+![screenshot](https://user-images.githubusercontent.com/5802969/55355625-c52c9c80-54c0-11e9-9180-3a2c2c94cfce.png)
+
+The user also has the ability to search for other users currently using this platform. They can also use the search function.
+![screenshot](https://user-images.githubusercontent.com/5802969/55153281-f5cfa780-5149-11e9-8c63-a9d84f7d9d50.png)
+
+The user can view other users profile.
+![screenshot](https://user-images.githubusercontent.com/5802969/55355626-c52c9c80-54c0-11e9-9624-26dd9e0be2fc.png)
+
+The user can Also view projects created by other users.
+![screenshot](https://user-images.githubusercontent.com/5802969/55355624-c52c9c80-54c0-11e9-9846-f4d798e02748.png)
 ## Process
 We started the project by creating wireframes for our application and decided the core functionalities the application should have, as a group. We also discussed the RESTful routes, the structure of the database and models the application will required for the MVC methodology. The application contains 3 models user, project and package. To separate the work load efficiently we decided each member of the team would pick a model to work. Individually we would create the front-end side, back-end side and test the chosen model, we choose this approach to avoid any major conflict with git in the future. I feel it was an efficient approach as it gave each member of the team experience developing on the front-end and the back-end side of the application.
 
@@ -57,9 +85,6 @@ The development process started by installing all the packages we required as a 
 With the back-end side of the application working properly, we shifted our attention to the fron-end side. We used axios to make HTTP request to the back-end side of the application to retrieve data, these data were rendered using React. We also used Bulma which was customised using SCSS to make sure the styling across the application was consistent.
 
 In this project I contribute towards the development features on the users side. The features I implemented was the authorisation system which included log-in, register, error handling on the user side, users indexRoute, users showRoute, users updateRoute and tested the users routes.
-
-
-<!-- In order to carry out the authentication process, we used BCrypt to hash passwords in the backend and store it in the database so that BCrypt could compare it against the password given when logging in. We also used JSON Web Token to embed JSON into an encrypted token. This was incorporated in our login and register controller and is sent to the client when the users successfully authenticate. -->
 
 ## Challenges
 This was my first time using Git in a group environment, therefore I had a lot of issues with merge conflict. I keep on forgetting few steps, such as forgetting to create different sub branches during implementation phase of features therefore in most case I was developing on the main development branch.
@@ -87,3 +112,4 @@ I really pleased with implementing the Authentication system to the application,
 * Users to like project created by other Users
 * Rank the project depending on the number of like they received.
 * Users to message each other.
+* By using GitHub API allow use to add to add project they have on their GitHub
