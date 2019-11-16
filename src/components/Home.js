@@ -67,7 +67,6 @@ class Home extends React.Component {
                 </div>
                 <div className="homeText">
                   Connect with other developers, Explore all possibilities.
-                  teting stuff
                 </div>
                 <div className="homeText">Join Today.</div>
               </div>
