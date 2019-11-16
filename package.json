@@ -12,6 +12,11 @@
     "serve": "webpack-dev-server --mode=development",
     "test": "nyc mocha test/**/*_spec.js --require test/spec_helper --recursive --exit"
   },
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0",
+    "yarn": "1.16.0"
+  },
   "dependencies": {
     "autosize": "^4.0.2",
     "axios": "^0.18.0",
